@@ -1,10 +1,13 @@
 export interface Icards{
     
-    name: string,
-    description: string
-    category: string,
-    level: string,
-    rating: number,
-    badge: string
+   id: string;
+  name: string;
+  category: string;
+  description: string;
+  icon: string;
+  rating: number;
+  difficulty: string;
+  badge: string;
+
   
 }

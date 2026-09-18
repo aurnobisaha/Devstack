@@ -25,7 +25,15 @@ const cardspromise=cardsfetch();
    <p className='text-[#64748B]'>Pick one technology per category to build your ideal stack.</p>
    </div>
    <Suspense fallback={<h2>Loading.....</h2>}> 
+   <div className='grid grid-cols-4 gap-6'>
+    
      <Cards cardspromise={cardspromise} />
+   <div>
+   <h2>Your Stack</h2>
+   <p>No technologies selected yet</p>
+   </div>
+   </div>
+
    </Suspense>
    
    
