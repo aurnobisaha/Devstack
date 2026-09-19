@@ -1,6 +1,7 @@
 import React,{use} from 'react';
 import type { Icards } from '../../types/cards';
 
+
 interface cardsprops{
     cardspromise:Promise<Icards[]>
 }
@@ -10,7 +11,7 @@ const Cards = ({cardspromise}:cardsprops) => {
     const cards=use(cardspromise);
     
       return (
-    <div className="col-span-3 grid grid-cols-3 gap-4">
+    <div className="col-span-3 grid grid-cols-3 gap-4 pl-25 mt-8">
       {cards.map((card) => (
         <div key={card.name} className="card bg-base-100 shadow-sm">
           <div className="card-body">
@@ -22,10 +23,12 @@ const Cards = ({cardspromise}:cardsprops) => {
               />
 
               {card.badge && (
-                <span className="badge badge-xs badge-warning">
-                  {card.badge}
-                </span>
+                 <span>
+    {card.badge}
+  </span>
               )}
+
+            
             </div>
             
 
@@ -33,22 +36,22 @@ const Cards = ({cardspromise}:cardsprops) => {
               <h2 className='text-xl font-bold'>
                 {card.name}
               </h2>
-              <p className='text-sm mt-2'>
+              <p className='text-sm mt-2 text-[#64748B]'>
                 {card.description}
               </p>
               </div>
-              <div className='flex gap-2 px-4 mt-4'>
-                <span className='badge badge-outline'>
+              <div className='flex items-center gap-2 px-4 mt-4 min-w-0'>
+                <span className='btn  btn-xs  badge-ghost text-[#475569] text-xs  whitespace-nowrap'>
                     {card.category}
                 </span>
-                <span className='badge badge-outline'>{card.difficulty}</span>
-                 <span className='badge badge-ghost'>
+                <span className=' btn btn-ghost text-[#64748B] text-xs'>{card.difficulty}</span>
+                 <span className='ml-auto text-xs text-[#334155]'>
                 ⭐ {card.rating}
               </span>
               </div>
 
               <div className='flex justify-between items-center p-4 mt-2'>
-              <button className="btn btn-primary btn-block">
+              <button className='btn w-full btn-wide bg-black text-white border-black' >
                 Add to Stack
               </button>
             </div>
