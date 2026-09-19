@@ -3,6 +3,7 @@ import Nav from './components/Nav'
 import Banner from './components/Banner'
 import Cards from './components/cards/cards';
 import type { Icards } from './types/cards';
+import Stack from './components/stack/stack';
 const cardsfetch=async():Promise<Icards[]>=>{
   const res= await fetch("/data.json");
   const data=await res.json();
@@ -27,12 +28,10 @@ const cardspromise=cardsfetch();
    <Suspense fallback={<h2>Loading.....</h2>}> 
    <div className='grid grid-cols-4 gap-6'>
     
-     <Cards cardspromise={cardspromise} />
-   <div>
-   <h2>Your Stack</h2>
-   <p>No technologies selected yet</p>
+   <Cards cardspromise={cardspromise} />
+   <Stack />
    </div>
-   </div>
+   
 
    </Suspense>
    
