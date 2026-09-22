@@ -6,13 +6,7 @@ interface cardsprops {
   setStack: React.Dispatch<React.SetStateAction<Icards[]>>;
 }
 
-const Card = ({
-  card,
-  setStack,
-}: {
-  card: Icards;
-  setStack: React.Dispatch<React.SetStateAction<Icards[]>>;
-}) => {
+const Card = ({card,setStack,}: {card: Icards;setStack: React.Dispatch<React.SetStateAction<Icards[]>>;}) => {
   const [isSelected, setIsSelected] = useState(false);
 
   return (
