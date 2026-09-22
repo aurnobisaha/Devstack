@@ -13,7 +13,7 @@ compare them side by side, and put together the stack that fits your <br />
 next project.</p>
 <div className='flex gap-4 mt-6'>
     <button className='btn btn-active btn-secondary bg-[linear-gradient(to_right,#FF5722,#D81B7E,#7C3AED)]'>Explore Technologies</button>
-<button className='btn text-[#475569]'>Learn More</button>
+<button className='btn text-[#475569] '>Learn More</button>
 </div>
 
 </div>

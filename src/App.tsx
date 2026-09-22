@@ -1,4 +1,5 @@
-import { Suspense } from 'react'
+import { Suspense,useState } from 'react'
+
 import Nav from './components/Nav'
 import Banner from './components/Banner'
 import Cards from './components/cards/cards';
@@ -12,6 +13,7 @@ const cardsfetch=async():Promise<Icards[]>=>{
 
 function App() {
   
+  const [stack, setStack] = useState<Icards[]>([]);
 
 const cardspromise=cardsfetch();
   return (
@@ -28,14 +30,18 @@ const cardspromise=cardsfetch();
    <Suspense fallback={<h2>Loading.....</h2>}> 
    <div className='grid grid-cols-4 gap-6'>
     
-   <Cards cardspromise={cardspromise} />
-   <Stack />
+      <Cards
+      cardspromise={cardspromise}
+     setStack={setStack}
+    />
+
+    <Stack stack={stack} />
    </div>
    
 
    </Suspense>
    
-   
+  
   
 
    </>

@@ -1,6 +1,8 @@
+
 import Logo from "../assets/logo-text.png";
 
 const nav = () => {
+
     return (
         <nav className="text-[#FFFFFF]">
         <div className="container mx-auto px-6 mt-4 flex justify-between">
@@ -14,8 +16,8 @@ const nav = () => {
             </ul>
 
             <div className="flex gap-3 items-center">
-                <button className="text-[#334155]">Sign In</button>
-                <button className="text-[#FFFFFF] btn btn-secondary ">Sign Up</button>
+                <button  className= "text-[#334155]">Sign In</button>
+                <button  className= "btn btn-secondary bg-[#D91B7E] rounded-[20px] text-[#FFFFFF]">Sign Up</button>
 
             </div>
             
