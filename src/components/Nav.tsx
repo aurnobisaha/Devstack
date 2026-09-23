@@ -6,7 +6,7 @@ const nav = () => {
     return (
         <nav className="text-[#FFFFFF]">
         <div className="container mx-auto px-6 mt-4 flex justify-between">
-            <img src={Logo} alt=""/>
+            <img src={Logo} alt="" className="ml-10"/>
             <ul className="flex gap-4 items-center">
                 <li className="text-[#DB2777]">Home</li>
                 <li className="text-[#475569]">Technologies</li>

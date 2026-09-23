@@ -1,10 +1,10 @@
-import { Suspense,useState } from 'react'
+import { Suspense } from 'react'
 
 import Nav from './components/Nav'
 import Banner from './components/Banner'
 import Cards from './components/cards/cards';
 import type { Icards } from './types/cards';
-import Stack from './components/stack/stack';
+//import Stack from './components/stack/stack';
 const cardsfetch=async():Promise<Icards[]>=>{
   const res= await fetch("/data.json");
   const data=await res.json();
@@ -13,7 +13,7 @@ const cardsfetch=async():Promise<Icards[]>=>{
 
 function App() {
   
-  const [stack, setStack] = useState<Icards[]>([]);
+  //const [stack, setStack] = useState<Icards[]>([]);
 
 const cardspromise=cardsfetch();
   return (
@@ -28,14 +28,15 @@ const cardspromise=cardsfetch();
    <p className='text-[#64748B]'>Pick one technology per category to build your ideal stack.</p>
    </div>
    <Suspense fallback={<h2>Loading.....</h2>}> 
-   <div className='grid grid-cols-4 gap-6'>
+   <div className='grid grid-cols-4 gap-6 px-8'>
     
-      <Cards
-      cardspromise={cardspromise}
-     setStack={setStack}
+      <Cards cardspromise={cardspromise}
+      
+    // setStack={setStack}
     />
+    
 
-    <Stack stack={stack} />
+  
    </div>
    
 
